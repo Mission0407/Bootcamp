@@ -1,0 +1,57 @@
+body {
+    background-size: 130px 100px;
+    background-attachment: fixed;
+    font-family: Tahoma, Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(202, 112, 8);
+    font: 40px bold;
+    text-align: center;
+}
+
+table {
+    width: 50%;
+    font: 19px italic;
+    
+}
+
+thead {
+    text-align: left;
+    background-color: sandybrown;
+}
+tbody{
+    background-color: navajowhite;
+    text-align: center;
+}
+section{
+    font: 19px bolder;
+    border: 1px ridge transparent;
+    padding: 15px;
+    border-color: black;
+    text-align: center;
+    
+    
+}
+.bg {
+    background-image: url("photo-1507525428034-b723cf961d3e.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+label {
+    display: block;
+}
+
+#submit-btn {
+    display: block;
+    background-color: peru;
+    text-align: center;
+    
+}

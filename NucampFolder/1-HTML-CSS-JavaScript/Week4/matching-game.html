@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      img {
+        position: absolute;
+      }
+      div {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+      }
+      #rightSide {
+        left: 500px;
+        border-left: 1px solid;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <title>Matching Game</title>
+  </head>
+  <body onload="generateFaces()">
+    <h1>Matching Game</h1>
+    <p>Click on the extra smiling face on the left.</p>
+    <img />
+    <div id="leftSide"></div>
+    <div id="rightSide"></div>
+    <script>
+      //window.addEventListener('load', generateFaces);
+      let numberOfFaces = 5;
+      let theLeftSide = document.getElementById("leftSide");
+      let theRightSide = document.getElementById("rightSide");
+      //function to generate random faces in left side and right side of the page margin
+      function generateFaces() {
+        for (i = 0; i < numberOfFaces; i++) {
+          let face = document.createElement("img");
+          face.setAttribute("src", "images/smile.png");
+          let randomTop = Math.floor(Math.random() * 401 + 1);
+          let randomLeft = Math.floor(Math.random() * 401 + 1);
+          face.style.top = randomTop + "px";
+          face.style.left = randomLeft + "px";
+          theLeftSide.appendChild(face);
+        }
+        //Cloning the images from theLeftSide onto right side
+        const leftSideImages = theLeftSide.cloneNode(true);
+        //removing the last child from the theRightSide
+        leftSideImages.removeChild(leftSideImages.lastChild);
+        theRightSide.appendChild(leftSideImages);
+        //theLeftSide.addEventListener(theLeftSide.lastChild);
+        // Adding event handler to the last child on the theLeftSide (which was intentionally removed during cloning onto theRightSide)
+        theLeftSide.addEventListener("click", nextLevel);
+        document.body.addEventListener('click', gameOver);
+      }
+      //Below function basically doubles the number of images when the user identifies the extra image on the left side and click's the respective image
+      function nextLevel() {
+        event.stopPropagation();
+        numberOfFaces += 5;
+        
+        while (theLeftSide.firstChild) {
+            theLeftSide.removeChild(theLeftSide.firstChild);
+        }
+        while (theRightSide.firstChild) {
+            theRightSide.removeChild(theRightSide.firstChild);
+        }
+        generateFaces();
+      }
+      //Upon two unsuccessfull trials the below function will be triggered and alerts the user that its game over
+      function gameOver(){
+          alert('Game Over!');
+          document.body.removeEventListener('click', gameOver);
+          theLeftSide.removeEventListener(theLeftSide.lastChild);
+      }
+    </script>
+  </body>
+</html>

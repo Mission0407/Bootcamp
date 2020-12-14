@@ -1,0 +1,60 @@
+.main{
+    font-family: Verdana, Arial, sans-serif;
+}
+legend{
+    background: green;
+    border-radius: 10px;
+    color: white;
+    padding: 12px;
+    animation-name: testedanimate;
+    animation-duration: 4s;
+    animation-delay: 2s;
+}
+fieldset{
+    background: lavender;
+    border: 10px solid darkblue;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: 720px;
+}
+div{
+    margin: 10px;
+}
+label{
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+    width: 200px;
+}
+input[type="radio"]+label, input[type="checkbox"]+label{
+    width: auto;
+}
+.range-caption{
+    background: darkcyan;
+    color: white;
+    padding: 6px;
+    text-align: center;
+}
+@keyframes animate{
+    from {background-color: darkcyan;}
+    to {background-color: red;}
+}
+@keyframes testedanimate{
+    0%   {background-color:red; left:0px; top:0px;}
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:green; left:0px; top:0px;}
+}
+input[type="submit"]{
+    background: darkcyan;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    padding: 12px;
+    animation-name: animate;
+    animation-duration: 10s;
+}
+:hover{
+    color: blue;
+}

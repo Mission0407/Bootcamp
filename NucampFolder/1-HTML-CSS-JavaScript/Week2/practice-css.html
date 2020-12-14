@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>CSS Practice: CSS Corner Cafe</title>
+    <link rel="stylesheet" href="css/practice-styles.css" />
+</head>
+
+<body class="bg">
+    <h1>CSS Corner Cafe</h1>
+    <section>
+        <h2>Menu</h2>
+        <table class="center">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Coffee</td>
+                    <td>$2</td>
+                </tr>
+                <tr>
+                    <td>Tea</td>
+                    <td>$1.50</td>
+                </tr>
+                <tr>
+                    <td>Chicken & Waffles</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Blueberry Pancakes</td>
+                    <td>$6</td>
+                </tr>
+                <tr>
+                    <td>Shortcakes</td>
+                    <td>$5</td>
+                </tr>
+                <tr>
+                    <td>Donut</td>
+                    <td>$2</td>
+                </tr>
+            </tbody>
+        </table>
+        <label for="menu">Choose your favorite menu item</label>
+        <select id="menu" required> 
+            <option selected value="">Choose</option>
+            <option value="coffee"> Coffee</option>
+            <option value="tea">Tea</option>
+            <option value="chicken">Chicken & Waffles</option>
+            <option value="Blueberry">Blueberry Pancakes</option>
+            <option value="shortcakes">Shortcakes</option>
+            <option value="donut">Donut</option>
+        </select>
+    </section>
+        
+    <section>
+        <h2>Submit Your Review</h2>
+        <form action="https://us-central1-nucamp-production.cloudfunctions.net/post/formdata" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+            <label for="rating">Your Rating:</label>
+            1 <input type="range" id="rating" name="rating" min="1" max="5" /> 5
+            <input class="center" type="submit" id="submit-btn" />
+            <textarea id="rating" name="rating" rows="4" cols="50"> Additional Feedback</textarea>
+        </form>
+    </section>
+    <section>
+        <h2>Contact details</h2>
+        <p> Call us at: <a href="tel:+15555551212">1-555-555-1212</a></p>
+        <address>
+            Address: <br>
+            CSS Corner Cafe<br />
+            101 W Main St<br />
+            Bellevue, WA 98004 
+        </address>
+    </section>
+</body>
+
+</html>
